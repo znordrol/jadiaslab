@@ -43,3 +43,7 @@ sitemap*.xml
 # cypress
 cypress/videos
 cypress/screenshots
+
+# python scripts
+.mypy_cache
+__pycache__

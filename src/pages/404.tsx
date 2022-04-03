@@ -13,7 +13,6 @@ const NotFound: NextPage = () => (
             <h1 className='text-8xl text-primary-300'>404</h1>
             <h2>Page Not Found</h2>
           </div>
-
           <p className='text-xl text-primary-200'>
             <ArrowLink href='/' openNewTab={false} direction='left'>
               Back To Home

@@ -1,3 +1,7 @@
 node_modules
 bin
 .next
+
+# python scripts
+.mypy_cache
+__pycache__
