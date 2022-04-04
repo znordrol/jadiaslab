@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <>
       <Seo />
       <main>
-        <section className='bg-black text-primary-50'></section>
+        <section className='bg-black text-primary-50'>Salah link ya</section>
       </main>
     </>
   );
