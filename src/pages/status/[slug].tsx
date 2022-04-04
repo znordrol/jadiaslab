@@ -14,8 +14,8 @@ type LinkParams = {
 } & ParsedUrlQuery;
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const paths = aslab.map(({ first_link }) => ({
-    params: { slug: first_link },
+  const paths = aslab.map(({ second_link }) => ({
+    params: { slug: second_link },
   }));
 
   return { paths, fallback: false };
@@ -48,10 +48,8 @@ const Page: NextPage<PageProp> = ({ name, code }) => {
                   Di bawah adalah string yang terencode dengan base64. Ketika
                   kamu sudah mengencode nanti akan dapat kode C, tapi terdapat
                   kesalahan syntax sehingga tidak bisa dicompile. Perbaikilah
-                  kode tersebut sehingga dapat di compile. Tidak ada yang salah
-                  dari logic kodenya, hanya terdapat 2 kesalahan syntax saja.
-                  Setelah dicompile dan dijalankan akan ada output link,
-                  kunjungilah linknya
+                  kode tersebut sehingga dapat di compile. Setelah dicompile dan
+                  dijalankan akan ada output link, kunjungilah linknya
                 </p>
                 <CopyToClipboard text={code}>
                   <Button>
