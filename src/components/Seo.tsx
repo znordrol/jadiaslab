@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 const defaultMeta = {
-  title: 'Next.js TypeScript Starter',
+  title: 'Jadi Aslab Moment',
   siteName: process.env.NEXT_PUBLIC_HOSTNAME || 'jadiaslab.vercel.app',
   description: 'Status penerimaan aslab b201 2022.',
   url: process.env.NEXT_PUBLIC_HOSTNAME
