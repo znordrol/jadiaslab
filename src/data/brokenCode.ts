@@ -29,6 +29,12 @@ export const ascii = (a: string) => a.charCodeAt(0);
 export const getNameFromSlug = (slug: string) =>
   aslab.find((a) => a.first_link === slug)?.name ?? 'amogus';
 
+export const getNameFrom2ndSlug = (slug: string) =>
+  aslab.find((a) => a.second_link === slug)?.name ?? 'amogus';
+
+export const getAccFrom2ndSlug = (slug: string) =>
+  aslab.find((a) => a.second_link === slug)?.acc ?? false;
+
 export const getCodeFromSlug = (s: string) => {
   const payloadArr = [];
 

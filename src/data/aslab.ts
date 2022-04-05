@@ -22,7 +22,7 @@ const aslab: Aslab[] = [
     name: 'Arya Abdul Azis',
     first_link: 'JLbGB',
     second_link: 'wkIHz',
-    acc: false,
+    acc: true,
   },
   {
     name: 'Azzam Wildan',

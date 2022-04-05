@@ -1,13 +1,10 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import type { ParsedUrlQuery } from 'querystring';
 import type { ReactNode } from 'react';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { MdContentCopy } from 'react-icons/md';
 
-import Button from '@/components/buttons/Button';
 import Seo from '@/components/Seo';
 import aslab from '@/data/aslab';
-import { getCodeFromSlug, getNameFromSlug } from '@/data/brokenCode';
+import { getAccFrom2ndSlug, getNameFrom2ndSlug } from '@/data/brokenCode';
 
 type LinkParams = {
   slug: string;
@@ -23,18 +20,18 @@ export const getStaticPaths: GetStaticPaths = () => {
 
 export const getStaticProps: GetStaticProps = ({ params }) => {
   const { slug } = params as LinkParams;
-  const code = getCodeFromSlug(slug);
-  const name = getNameFromSlug(slug);
-  return { props: { name, code } };
+  const acc = getAccFrom2ndSlug(slug);
+  const name = getNameFrom2ndSlug(slug);
+  return { props: { name, acc } };
 };
 
 type PageProp = {
   name: string;
-  code: string;
+  acc: boolean;
   children?: ReactNode;
 };
 
-const Page: NextPage<PageProp> = ({ name, code }) => {
+const Page: NextPage<PageProp> = ({ name, acc }) => {
   return (
     <>
       <Seo templateTitle={`Halo ${name}`} />
@@ -45,18 +42,10 @@ const Page: NextPage<PageProp> = ({ name, code }) => {
               <h1 className='text-3xl'>Halo, {name}</h1>
               <div className='max-w-md space-y-4'>
                 <p>
-                  Di bawah adalah string yang terencode dengan base64. Ketika
-                  kamu sudah mengencode nanti akan dapat kode C, tapi terdapat
-                  kesalahan syntax sehingga tidak bisa dicompile. Perbaikilah
-                  kode tersebut sehingga dapat di compile. Setelah dicompile dan
-                  dijalankan akan ada output link, kunjungilah linknya
+                  {acc
+                    ? 'Selamat, kamu diterima sebagai aslab B201 🎉'
+                    : 'Kamu sudah melakukan usaha terbaikmu, namun kamu belum dapat diterima sebagai aslab B201, tetap semangat dan pantang menyerah 💪'}
                 </p>
-                <CopyToClipboard text={code}>
-                  <Button>
-                    <MdContentCopy className='text-3xl' />
-                  </Button>
-                </CopyToClipboard>
-                <pre className='whitespace-pre-wrap break-words'>{code}</pre>
               </div>
             </div>
           </div>
