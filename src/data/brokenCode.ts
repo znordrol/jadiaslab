@@ -32,6 +32,9 @@ export const getNameFromSlug = (slug: string) =>
 export const getNameFrom2ndSlug = (slug: string) =>
   aslab.find((a) => a.second_link === slug)?.name ?? 'amogus';
 
+export const getImgFrom2ndSlug = (slug: string) =>
+  aslab.find((a) => a.second_link === slug)?.img;
+
 export const getAccFrom2ndSlug = (slug: string) =>
   aslab.find((a) => a.second_link === slug)?.acc ?? false;
 
